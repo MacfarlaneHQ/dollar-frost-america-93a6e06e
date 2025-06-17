@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'montserrat': ['Montserrat', 'sans-serif'],
+				'nunito': ['Nunito', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +66,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// O$ Custom Colors
+				'o-navy': '#002768',
+				'o-red': '#be0b31',
+				'o-green': '#003D1D',
+				'o-purple': '#110654',
+				'o-yellow': '#FFBB02',
+				'o-orange': '#DF631A',
+				'o-neutral': '#3D3D3D',
+				'o-light': '#F5F5F5',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +98,38 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'glass-shine': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'50%': {
+						transform: 'translateX(100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'glass-shine': 'glass-shine 2s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'america-gradient': 'linear-gradient(135deg, #002768 0%, #be0b31 100%)',
+				'america-gradient-reverse': 'linear-gradient(135deg, #be0b31 0%, #002768 100%)',
 			}
 		}
 	},
