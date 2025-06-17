@@ -1,6 +1,5 @@
+
 import { useState } from "react";
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -50,7 +49,7 @@ const Contribute = () => {
             <h1 className="font-montserrat font-extrabold text-4xl mb-6 text-transparent bg-america-gradient bg-clip-text">
               We appreciate that.
             </h1>
-            <p className="font-nunito text-xl mb-8 text-muted-foreground">
+            <p className="font-nunito text-xl mb-8 text-foreground">
               We are building this for you. It's time.
             </p>
             
@@ -90,7 +89,7 @@ const Contribute = () => {
           <h1 className="font-montserrat font-extrabold text-4xl sm:text-5xl lg:text-6xl uppercase tracking-wider mb-8 text-transparent bg-america-gradient bg-clip-text">
             Contribute
           </h1>
-          <p className="font-nunito text-xl text-muted-foreground">
+          <p className="font-nunito text-xl text-foreground">
             Help us build America's financial future
           </p>
         </div>
@@ -102,10 +101,10 @@ const Contribute = () => {
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <Lock className="h-12 w-12 mx-auto mb-4 text-o-navy dark:text-o-red" />
-                  <h2 className="font-montserrat font-semibold text-2xl mb-2">
+                  <h2 className="font-montserrat font-semibold text-2xl mb-2 text-foreground">
                     Restricted Access
                   </h2>
-                  <p className="font-nunito text-muted-foreground">
+                  <p className="font-nunito text-foreground">
                     Enter password to contribute to O$
                   </p>
                 </div>
@@ -137,7 +136,7 @@ const Contribute = () => {
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-america-gradient-reverse opacity-10 rounded-full blur-2xl"></div>
               
               <div className="relative z-10">
-                <h2 className="font-montserrat font-semibold text-2xl sm:text-3xl text-center mb-8">
+                <h2 className="font-montserrat font-semibold text-2xl sm:text-3xl text-center mb-8 text-foreground">
                   What does a financial operating system look like to you, fellow American?
                 </h2>
                 
