@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, DollarSign } from "lucide-react";
@@ -26,12 +27,12 @@ const Index = () => {
         </h1>
 
         {/* Subtitle */}
-        <h2 className="font-montserrat font-semibold text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 animate-fade-in">
+        <h2 className="font-montserrat font-semibold text-xl sm:text-2xl lg:text-3xl text-foreground mb-8 animate-fade-in">
           America's Financial Operating System
         </h2>
 
         {/* Description */}
-        <p className="font-nunito text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in">
+        <p className="font-nunito text-lg sm:text-xl text-foreground mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in">
           Built for Americans, by Americans. The future of finance is here.
         </p>
 
@@ -45,7 +46,7 @@ const Index = () => {
           </Link>
           
           <Link to="/updates">
-            <Button variant="outline" className="america-glass border-o-navy/30 hover:border-o-red/50 font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105">
+            <Button variant="outline" className="america-glass border-o-navy/30 hover:border-o-red/50 font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 text-foreground">
               Follow the Dollar
             </Button>
           </Link>
@@ -57,19 +58,19 @@ const Index = () => {
             <div className="text-3xl font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text mb-2">
               100%
             </div>
-            <div className="font-nunito text-sm text-muted-foreground">American Built</div>
+            <div className="font-nunito text-sm text-foreground">American Built</div>
           </div>
           <div className="glass-card p-6 rounded-2xl animate-fade-in">
             <div className="text-3xl font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text mb-2">
               24/7
             </div>
-            <div className="font-nunito text-sm text-muted-foreground">Always Available</div>
+            <div className="font-nunito text-sm text-foreground">Always Available</div>
           </div>
           <div className="glass-card p-6 rounded-2xl animate-fade-in">
             <div className="text-3xl font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text mb-2">
               ∞
             </div>
-            <div className="font-nunito text-sm text-muted-foreground">Infinite Possibilities</div>
+            <div className="font-nunito text-sm text-foreground">Infinite Possibilities</div>
           </div>
         </div>
       </div>

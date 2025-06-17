@@ -26,7 +26,7 @@ const About = () => {
                 O$
               </span>
               . Built and powered by{" "}
-              <span className="font-montserrat font-semibold text-transparent bg-america-gradient bg-clip-text">
+              <span className="font-montserrat font-semibold text-foreground">
                 Macfarlane
               </span>
               {" "}for everyone.
@@ -41,33 +41,10 @@ const About = () => {
             Learn More
           </Button>
           
-          <Button variant="outline" className="group america-glass border-o-navy/30 hover:border-o-red/50 font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105">
+          <Button variant="outline" className="group america-glass border-o-navy/30 hover:border-o-red/50 font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 text-foreground">
             <Play className="mr-3 h-5 w-5" />
             Manifesto Video
           </Button>
-        </div>
-
-        {/* Additional Info */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="glass-card p-8 rounded-2xl">
-            <h3 className="font-montserrat font-semibold text-xl mb-4 text-o-navy dark:text-o-red">
-              Our Mission
-            </h3>
-            <p className="font-nunito text-muted-foreground leading-relaxed">
-              To democratize financial services and create a unified platform that serves every American, 
-              regardless of their financial background or status.
-            </p>
-          </div>
-          
-          <div className="glass-card p-8 rounded-2xl">
-            <h3 className="font-montserrat font-semibold text-xl mb-4 text-o-navy dark:text-o-red">
-              Our Vision
-            </h3>
-            <p className="font-nunito text-muted-foreground leading-relaxed">
-              A future where financial complexity is eliminated, and every American has access to 
-              sophisticated financial tools in one seamless experience.
-            </p>
-          </div>
         </div>
       </div>
     </div>
