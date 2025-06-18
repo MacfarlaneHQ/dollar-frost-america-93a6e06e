@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog";
@@ -40,13 +39,13 @@ const Index = () => {
                 Release
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700">
+            <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-background border border-border">
               <DialogHeader>
                 <div className="space-y-8 mb-8">
                   {/* Document Letterhead */}
-                  <div className="border-b-2 border-gray-300 dark:border-gray-600 pb-8">
+                  <div className="border-b border-border pb-8">
                     {/* Top Row: Logo and Reading Time */}
-                    <div className="flex justify-between items-start mb-6">
+                    <div className="flex justify-between items-center mb-6">
                       <div className="w-16 h-16 border border-dashed border-gray-300 dark:border-gray-600 rounded-lg flex items-center justify-center">
                         <span className="text-gray-400 dark:text-gray-500 text-xs">LOGO</span>
                       </div>
@@ -56,7 +55,7 @@ const Index = () => {
                     </div>
                     
                     {/* Second Row: Company Info and Date */}
-                    <div className="flex justify-between items-start mb-6">
+                    <div className="flex justify-between items-center mb-6">
                       <div className="text-left">
                         <div className="text-sm font-medium text-foreground">
                           Macfarlane HQ
