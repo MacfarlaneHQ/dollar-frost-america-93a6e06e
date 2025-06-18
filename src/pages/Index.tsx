@@ -33,8 +33,8 @@ const Index = () => {
 
         {/* Action Buttons */}
         <div className="flex justify-center">
-          <Button variant="outline" className="font-montserrat font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-foreground transition-colors duration-200">
-            <Play className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
+          <Button variant="outline" className="font-montserrat font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-foreground transition-colors duration-200">
+            <Play className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
             Video
           </Button>
         </div>
