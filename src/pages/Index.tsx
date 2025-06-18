@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Play, FileText } from "lucide-react";
+import { Play, FileText, User } from "lucide-react";
 
 const Index = () => {
   const [isLetterOpen, setIsLetterOpen] = useState(false);
@@ -33,23 +33,26 @@ const Index = () => {
 
         {/* Action Buttons */}
         <div className="flex justify-center gap-4">
-          <Button variant="outline" className="font-montserrat font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-foreground transition-colors duration-200">
-            <Play className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-            Video
-          </Button>
-          
           <Dialog open={isLetterOpen} onOpenChange={setIsLetterOpen}>
             <DialogTrigger asChild>
               <Button variant="outline" className="font-montserrat font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-foreground transition-colors duration-200">
                 <FileText className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Letter
+                Release
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
               <DialogHeader>
-                <DialogTitle className="font-montserrat font-bold text-xl mb-4 text-center">
-                  Press Release
-                </DialogTitle>
+                <div className="text-center space-y-2 mb-6">
+                  <div className="text-sm text-muted-foreground">
+                    Sent from Macfarlane HQ
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Dover, Delaware | June 19th, 2025
+                  </div>
+                  <DialogTitle className="font-montserrat font-bold text-xl mt-4">
+                    Press Release
+                  </DialogTitle>
+                </div>
               </DialogHeader>
               <div className="font-nunito text-foreground space-y-4 leading-relaxed">
                 <p className="font-semibold">To our clients,</p>
@@ -84,13 +87,23 @@ const Index = () => {
                 
                 <div className="mt-6 pt-4 border-t border-border">
                   <p>God bless us all,</p>
-                  <p className="font-semibold mt-2">Jarah D. Macfarlane</p>
-                  <p className="text-sm text-muted-foreground">Macfarlane Company Founder and CEO</p>
-                  <p className="text-sm text-muted-foreground italic">Sent from MacfarlaneHQ</p>
+                  <div className="flex items-center gap-3 mt-2">
+                    <User className="h-8 w-8 p-1 border border-border rounded-full" />
+                    <div>
+                      <p className="font-semibold">Jarah D. Macfarlane</p>
+                      <p className="text-sm text-muted-foreground">Macfarlane Company Founder and CEO</p>
+                      <p className="text-sm text-muted-foreground italic">Sent from MacfarlaneHQ</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </DialogContent>
           </Dialog>
+          
+          <Button variant="outline" className="font-montserrat font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-foreground transition-colors duration-200">
+            <Play className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+            Video
+          </Button>
         </div>
       </div>
     </div>
