@@ -44,8 +44,8 @@ export function Footer() {
           <div className="text-center md:text-left">
             <p className="text-sm font-nunito text-muted-foreground">
               Powered by{" "}
-              <span className="font-montserrat font-semibold text-transparent bg-america-gradient bg-clip-text">
-                Macfarlane
+              <span className="font-montserrat font-extrabold uppercase text-foreground">
+                MACFARLANE
               </span>
             </p>
           </div>

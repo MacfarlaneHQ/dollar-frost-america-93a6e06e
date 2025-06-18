@@ -24,9 +24,9 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link 
             to="/" 
-            className="text-2xl font-montserrat font-extrabold tracking-wider text-transparent bg-america-gradient bg-clip-text hover:scale-105 transition-transform duration-200"
+            className="text-2xl font-montserrat font-extrabold tracking-wider text-foreground hover:scale-105 transition-transform duration-200"
           >
-            O$
+            O$.
           </Link>
 
           {/* Desktop Navigation */}

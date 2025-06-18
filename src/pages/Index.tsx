@@ -1,77 +1,44 @@
 
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { ArrowRight, DollarSign } from "lucide-react";
+import { Play, BookOpen } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="flex-1 flex items-center justify-center relative overflow-hidden">
-      {/* Background gradient animation */}
-      <div className="absolute inset-0 bg-america-gradient opacity-5 dark:opacity-10"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,39,104,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(190,11,49,0.1),transparent_50%)]"></div>
-      
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        {/* Logo/Brand */}
-        <div className="mb-8 flex justify-center">
-          <div className="relative">
-            <DollarSign className="h-24 w-24 text-transparent bg-america-gradient bg-clip-text" style={{ WebkitBackgroundClip: 'text' }} />
-            <div className="absolute inset-0 h-24 w-24 bg-america-gradient opacity-20 blur-xl rounded-full"></div>
+    <div className="pt-24 pb-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Logo Box Space */}
+        <div className="flex justify-center mb-12">
+          <div className="w-32 h-32 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-2xl flex items-center justify-center">
+            <span className="text-gray-400 dark:text-gray-500 font-montserrat text-sm">LOGO</span>
           </div>
         </div>
 
-        {/* Main Title */}
-        <h1 className="font-montserrat font-extrabold text-4xl sm:text-6xl lg:text-7xl xl:text-8xl uppercase tracking-wider mb-6 leading-tight">
-          <span className="text-transparent bg-america-gradient bg-clip-text animate-fade-in">
-            O$
-          </span>
-        </h1>
+        {/* Hero Text */}
+        <div className="text-center mb-16">
+          <h1 className="font-montserrat font-extrabold uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-foreground mb-12 max-w-5xl mx-auto">
+            America deserves an all in one financial platform. That's{" "}
+            <span className="font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text">
+              O$
+            </span>
+            . Built and powered by{" "}
+            <span className="font-montserrat font-extrabold uppercase text-foreground">
+              MACFARLANE
+            </span>
+            {" "}for everyone.
+          </h1>
+        </div>
 
-        {/* Subtitle */}
-        <h2 className="font-montserrat font-semibold text-xl sm:text-2xl lg:text-3xl text-foreground mb-8 animate-fade-in">
-          America's Financial Operating System
-        </h2>
-
-        {/* Description */}
-        <p className="font-nunito text-lg sm:text-xl text-foreground mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in">
-          Built for Americans, by Americans. The future of finance is here.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in">
-          <Link to="/about">
-            <Button className="group bg-america-gradient hover:bg-america-gradient-reverse text-white font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              Learn More
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+          <Button className="group bg-america-gradient hover:bg-america-gradient-reverse text-white font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <BookOpen className="mr-3 h-5 w-5" />
+            Learn More
+          </Button>
           
-          <Link to="/updates">
-            <Button variant="outline" className="america-glass border-o-navy/30 hover:border-o-red/50 font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 text-foreground">
-              Follow the Dollar
-            </Button>
-          </Link>
-        </div>
-
-        {/* Stats */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8">
-          <div className="glass-card p-6 rounded-2xl animate-fade-in">
-            <div className="text-3xl font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text mb-2">
-              100%
-            </div>
-            <div className="font-nunito text-sm text-foreground">American Built</div>
-          </div>
-          <div className="glass-card p-6 rounded-2xl animate-fade-in">
-            <div className="text-3xl font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text mb-2">
-              24/7
-            </div>
-            <div className="font-nunito text-sm text-foreground">Always Available</div>
-          </div>
-          <div className="glass-card p-6 rounded-2xl animate-fade-in">
-            <div className="text-3xl font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text mb-2">
-              ∞
-            </div>
-            <div className="font-nunito text-sm text-foreground">Infinite Possibilities</div>
-          </div>
+          <Button variant="outline" className="group america-glass border-o-navy/30 hover:border-o-red/50 font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 text-foreground">
+            <Play className="mr-3 h-5 w-5" />
+            Manifesto Video
+          </Button>
         </div>
       </div>
     </div>
