@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog";
@@ -44,10 +45,13 @@ const Index = () => {
                 <div className="space-y-8 mb-8">
                   {/* Document Letterhead */}
                   <div className="border-b border-border pb-8">
-                    {/* Top Row: Logo Only */}
-                    <div className="flex justify-start items-center mb-6">
+                    {/* Top Row: Logo and QR Code */}
+                    <div className="flex justify-between items-center mb-6">
                       <div className="w-16 h-16 border border-dashed border-gray-300 dark:border-gray-600 rounded-lg flex items-center justify-center">
                         <span className="text-gray-400 dark:text-gray-500 text-xs">LOGO</span>
+                      </div>
+                      <div className="w-16 h-16 border border-dashed border-gray-300 dark:border-gray-600 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-400 dark:text-gray-500 text-xs">QR</span>
                       </div>
                     </div>
                     
