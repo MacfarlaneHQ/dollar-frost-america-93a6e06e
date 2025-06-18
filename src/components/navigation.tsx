@@ -16,6 +16,7 @@ export function Navigation() {
     { path: "/about", label: "About" },
     { path: "/updates", label: "Updates" },
     { path: "/contribute", label: "Contribute" },
+    { path: "/partners", label: "Partners" },
   ];
 
   return (
