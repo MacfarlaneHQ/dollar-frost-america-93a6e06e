@@ -14,7 +14,7 @@ const Index = () => {
         </div>
 
         {/* Hero Text */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h1 className="font-montserrat font-extrabold uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-foreground mb-6 max-w-5xl mx-auto">
             America deserves an all in one financial platform. That's{" "}
             <span className="font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text">
@@ -24,7 +24,7 @@ const Index = () => {
           </h1>
           <p className="font-nunito text-base sm:text-lg text-muted-foreground mb-2 max-w-3xl mx-auto">
             Built and powered by{" "}
-            <span className="font-montserrat font-semibold uppercase text-foreground">
+            <span className="font-montserrat font-extrabold uppercase text-foreground">
               MACFARLANE
             </span>
             {" "}for everyone.
@@ -33,7 +33,7 @@ const Index = () => {
 
         {/* Action Buttons */}
         <div className="flex justify-center">
-          <Button variant="outline" className="group america-glass border-gray-300 dark:border-gray-600 hover:border-o-red/50 dark:hover:border-o-red/50 font-montserrat font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg transition-all duration-300 hover:scale-105 text-foreground">
+          <Button variant="outline" className="font-montserrat font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-foreground transition-colors duration-200">
             <Play className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
             Video
           </Button>
