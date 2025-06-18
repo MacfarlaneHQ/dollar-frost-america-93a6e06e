@@ -22,7 +22,7 @@ const Index = () => {
             </span>
             .
           </h1>
-          <p className="font-nunito text-lg text-muted-foreground mb-12">
+          <p className="font-nunito text-base sm:text-lg text-muted-foreground mb-2 max-w-3xl mx-auto">
             Built and powered by{" "}
             <span className="font-montserrat font-semibold uppercase text-foreground">
               MACFARLANE
@@ -33,9 +33,9 @@ const Index = () => {
 
         {/* Action Buttons */}
         <div className="flex justify-center">
-          <Button variant="outline" className="group america-glass border-gray-300 dark:border-gray-600 hover:border-o-red/50 dark:hover:border-o-red/50 font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 text-foreground">
-            <Play className="mr-3 h-5 w-5" />
-            Manifesto Video
+          <Button variant="outline" className="group america-glass border-gray-300 dark:border-gray-600 hover:border-o-red/50 dark:hover:border-o-red/50 font-montserrat font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg transition-all duration-300 hover:scale-105 text-foreground">
+            <Play className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
+            Video
           </Button>
         </div>
       </div>

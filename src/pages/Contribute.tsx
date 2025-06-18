@@ -42,25 +42,25 @@ const Contribute = () => {
 
   if (showThankYou) {
     return (
-      <div className="pt-24 pb-16 flex items-center justify-center">
+      <div className="min-h-screen pt-24 pb-16 flex items-center justify-center">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-montserrat font-extrabold text-4xl mb-6 text-transparent bg-america-gradient bg-clip-text">
+          <h1 className="font-montserrat font-extrabold text-3xl sm:text-4xl mb-6 text-transparent bg-america-gradient bg-clip-text">
             We appreciate that.
           </h1>
-          <p className="font-nunito text-xl mb-8 text-foreground">
+          <p className="font-nunito text-lg sm:text-xl mb-8 text-foreground">
             We are building this for you. It's time.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
             <Link to="/updates">
-              <Button variant="outline" className="font-montserrat font-semibold rounded-full">
+              <Button variant="outline" className="font-montserrat font-semibold rounded-full w-full sm:w-auto">
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Follow the Dollar
               </Button>
             </Link>
             
             <Link to="/about">
-              <Button variant="outline" className="font-montserrat font-semibold rounded-full">
+              <Button variant="outline" className="font-montserrat font-semibold rounded-full w-full sm:w-auto">
                 <ExternalLink className="mr-2 h-4 w-4" />
                 About MACFARLANE
               </Button>
@@ -69,7 +69,7 @@ const Contribute = () => {
           
           <Button 
             onClick={() => setShowThankYou(false)}
-            className="mt-6 bg-america-gradient hover:bg-america-gradient-reverse text-white font-montserrat font-semibold rounded-full"
+            className="bg-america-gradient hover:bg-america-gradient-reverse text-white font-montserrat font-semibold rounded-full w-full sm:w-auto"
           >
             Contribute Again
           </Button>
@@ -79,14 +79,14 @@ const Contribute = () => {
   }
 
   return (
-    <div className="pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen pt-24 pb-16 flex items-center justify-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {!isAuthenticated ? (
           /* Password Protection */
           <div className="max-w-md mx-auto">
             <div className="text-center mb-8">
-              <Lock className="h-16 w-16 mx-auto mb-4 text-foreground" />
-              <h2 className="font-montserrat font-semibold text-2xl mb-2 text-foreground">
+              <Lock className="h-12 sm:h-16 w-12 sm:w-16 mx-auto mb-4 text-foreground" />
+              <h2 className="font-montserrat font-semibold text-xl sm:text-2xl text-foreground">
                 Restricted Access
               </h2>
             </div>
@@ -94,13 +94,13 @@ const Contribute = () => {
             <div className="search-container-gradient">
               <div className="relative flex items-center w-full bg-white/90 dark:bg-black/50 rounded-full backdrop-blur-md">
                 <Lock className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none" />
-                <form onSubmit={handlePasswordSubmit} className="w-full">
+                <form onSubmit={handlePasswordSubmit} className="w-full flex items-center">
                   <input
                     type="password"
                     placeholder="Enter password..."
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="flex-grow h-14 bg-transparent border-none rounded-full pl-12 pr-16 focus:outline-none focus:ring-0 font-montserrat tracking-wider text-foreground placeholder:text-muted-foreground"
+                    className="flex-grow h-14 bg-transparent border-none rounded-full pl-12 pr-14 focus:outline-none focus:ring-0 font-montserrat tracking-wider text-foreground placeholder:text-muted-foreground"
                   />
                   <button 
                     type="submit"
@@ -116,7 +116,7 @@ const Contribute = () => {
           /* Modern Chat Interface */
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="font-montserrat font-semibold text-3xl sm:text-4xl text-foreground mb-6">
+              <h2 className="font-montserrat font-semibold text-2xl sm:text-3xl md:text-4xl text-foreground mb-6 leading-tight">
                 What does a financial operating system look like to you?
               </h2>
             </div>
@@ -124,13 +124,13 @@ const Contribute = () => {
             <div className="search-container-gradient">
               <div className="relative flex items-center w-full bg-white/90 dark:bg-black/50 rounded-full backdrop-blur-md">
                 <HelpCircle className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none" />
-                <form onSubmit={handleResponseSubmit} className="w-full">
+                <form onSubmit={handleResponseSubmit} className="w-full flex items-center">
                   <input
                     type="text"
                     placeholder="Type your vision here..."
                     value={response}
                     onChange={(e) => setResponse(e.target.value)}
-                    className="flex-grow h-14 bg-transparent border-none rounded-full pl-12 pr-16 focus:outline-none focus:ring-0 font-nunito text-foreground placeholder:text-muted-foreground"
+                    className="flex-grow h-14 bg-transparent border-none rounded-full pl-12 pr-14 focus:outline-none focus:ring-0 font-nunito text-foreground placeholder:text-muted-foreground"
                     required
                   />
                   <button 
