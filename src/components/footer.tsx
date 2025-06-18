@@ -60,7 +60,7 @@ export function Footer() {
                 placeholder="Enter email for waitlist"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-64 rounded-full bg-background border-gray-300 dark:border-gray-600 focus:border-o-red dark:focus:border-o-red"
+                className="w-64 rounded-full bg-background border-gray-300 dark:border-gray-600 focus:border-gray-400 dark:focus:border-gray-500 focus-visible:ring-1 focus-visible:ring-gray-300 dark:focus-visible:ring-gray-600 focus-visible:ring-offset-0 transition-colors duration-200"
               />
               <Button 
                 type="submit"
