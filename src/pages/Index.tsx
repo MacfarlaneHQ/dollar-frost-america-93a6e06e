@@ -4,7 +4,7 @@ import { Play } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo Box Space */}
         <div className="flex justify-center mb-12">
@@ -23,11 +23,7 @@ const Index = () => {
             .
           </h1>
           <p className="font-nunito text-base sm:text-lg text-muted-foreground mb-2 max-w-3xl mx-auto">
-            Built and powered by{" "}
-            <span className="font-montserrat font-extrabold uppercase text-foreground">
-              MACFARLANE
-            </span>
-            {" "}for everyone.
+            Built for you. Built for everyone.
           </p>
         </div>
 
