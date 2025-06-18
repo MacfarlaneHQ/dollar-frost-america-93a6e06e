@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -77,30 +78,30 @@ const Updates = () => {
         {/* Progress Section */}
         <div className="america-glass p-8 rounded-3xl mb-12">
           <div className="text-center mb-6">
-            <h2 className="font-montserrat font-semibold text-2xl mb-4">
+            <h2 className="font-montserrat font-semibold text-2xl mb-4 text-foreground">
               Countdown to Launch
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="glass-card p-4 rounded-xl">
-                <div className="text-3xl font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text">
+                <div className="text-3xl font-montserrat font-extrabold text-foreground">
                   {timeLeft.days}
                 </div>
                 <div className="text-sm font-nunito text-muted-foreground">Days</div>
               </div>
               <div className="glass-card p-4 rounded-xl">
-                <div className="text-3xl font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text">
+                <div className="text-3xl font-montserrat font-extrabold text-foreground">
                   {timeLeft.hours}
                 </div>
                 <div className="text-sm font-nunito text-muted-foreground">Hours</div>
               </div>
               <div className="glass-card p-4 rounded-xl">
-                <div className="text-3xl font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text">
+                <div className="text-3xl font-montserrat font-extrabold text-foreground">
                   {timeLeft.minutes}
                 </div>
                 <div className="text-sm font-nunito text-muted-foreground">Minutes</div>
               </div>
               <div className="glass-card p-4 rounded-xl">
-                <div className="text-3xl font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text">
+                <div className="text-3xl font-montserrat font-extrabold text-foreground">
                   {timeLeft.seconds}
                 </div>
                 <div className="text-sm font-nunito text-muted-foreground">Seconds</div>
@@ -115,7 +116,7 @@ const Updates = () => {
 
         {/* Daily Updates */}
         <div className="space-y-6">
-          <h2 className="font-montserrat font-semibold text-3xl text-center mb-8">
+          <h2 className="font-montserrat font-semibold text-3xl text-center mb-8 text-foreground">
             Where did the dollar go today?
           </h2>
           
@@ -136,7 +137,7 @@ const Updates = () => {
                         <div className="text-xs font-nunito text-muted-foreground uppercase">
                           {day.dayOfWeek.slice(0, 3)}
                         </div>
-                        <div className="text-xl font-montserrat font-bold">
+                        <div className="text-xl font-montserrat font-bold text-foreground">
                           {day.date.getDate()}
                         </div>
                       </div>
@@ -145,7 +146,7 @@ const Updates = () => {
                   
                   <div className="flex-1">
                     <div className="flex items-center space-x-3 mb-2">
-                      <h3 className="font-montserrat font-semibold text-lg">
+                      <h3 className="font-montserrat font-semibold text-lg text-foreground">
                         {day.formatted}
                       </h3>
                       {day.isAvailable ? (
