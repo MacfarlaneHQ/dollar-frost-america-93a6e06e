@@ -89,9 +89,6 @@ const Contribute = () => {
               <h2 className="font-montserrat font-semibold text-2xl mb-2 text-foreground">
                 Restricted Access
               </h2>
-              <p className="font-nunito text-muted-foreground">
-                Enter password to contribute to O$
-              </p>
             </div>
             
             <div className="search-container-gradient">

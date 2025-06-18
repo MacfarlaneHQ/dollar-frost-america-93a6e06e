@@ -15,23 +15,25 @@ const Index = () => {
 
         {/* Hero Text */}
         <div className="text-center mb-16">
-          <h1 className="font-montserrat font-extrabold uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-foreground mb-12 max-w-5xl mx-auto">
+          <h1 className="font-montserrat font-extrabold uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-foreground mb-6 max-w-5xl mx-auto">
             America deserves an all in one financial platform. That's{" "}
             <span className="font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text">
               O$
             </span>
-            .<br />
+            .
+          </h1>
+          <p className="font-nunito text-lg text-muted-foreground mb-12">
             Built and powered by{" "}
-            <span className="font-montserrat font-extrabold uppercase text-foreground">
+            <span className="font-montserrat font-semibold uppercase text-foreground">
               MACFARLANE
             </span>
             {" "}for everyone.
-          </h1>
+          </p>
         </div>
 
         {/* Action Buttons */}
         <div className="flex justify-center">
-          <Button variant="outline" className="group america-glass border-o-navy/30 hover:border-o-red/50 font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 text-foreground">
+          <Button variant="outline" className="group america-glass border-gray-300 dark:border-gray-600 hover:border-o-red/50 dark:hover:border-o-red/50 font-montserrat font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 text-foreground">
             <Play className="mr-3 h-5 w-5" />
             Manifesto Video
           </Button>
