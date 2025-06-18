@@ -107,9 +107,9 @@ const Contribute = () => {
                   />
                   <button 
                     type="submit"
-                    className="absolute right-2 h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-foreground transition-all duration-200"
+                    className="absolute right-2 h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-foreground transition-all duration-200 flex items-center justify-center"
                   >
-                    <Send className="h-5 w-5 mx-auto" />
+                    <Send className="h-4 w-4" />
                   </button>
                 </form>
               </div>
@@ -122,9 +122,6 @@ const Contribute = () => {
               <h2 className="font-montserrat font-semibold text-3xl sm:text-4xl text-foreground mb-6">
                 What does a financial operating system look like to you?
               </h2>
-              <p className="font-nunito text-lg text-muted-foreground">
-                Share your vision for the future of American finance
-              </p>
             </div>
             
             <div className="search-container-gradient">
@@ -141,9 +138,9 @@ const Contribute = () => {
                   />
                   <button 
                     type="submit"
-                    className="absolute right-2 h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-foreground transition-all duration-200"
+                    className="absolute right-2 h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-foreground transition-all duration-200 flex items-center justify-center"
                   >
-                    <Send className="h-5 w-5 mx-auto" />
+                    <Send className="h-4 w-4" />
                   </button>
                 </form>
               </div>

@@ -107,7 +107,11 @@
   }
 
   .search-container-gradient {
-    @apply relative rounded-full p-[2px] bg-gradient-to-br from-gray-200 via-white to-gray-300 dark:from-o-navy/60 dark:via-o-red/40 dark:to-o-navy/60 shadow-lg shadow-gray-200/50 dark:shadow-o-red/20;
+    @apply relative rounded-full p-[2px] bg-gradient-to-br from-o-navy/60 via-o-red/40 to-o-navy/60 shadow-lg shadow-o-red/20 dark:from-o-navy/60 dark:via-o-red/40 dark:to-o-navy/60 dark:shadow-o-red/20;
+  }
+
+  .waitlist-input {
+    @apply backdrop-blur-md bg-white/95 dark:bg-black/80 border border-gray-200 dark:border-gray-700 rounded-full shadow-lg;
   }
 
   .nav-active-pill {
