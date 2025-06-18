@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog";
@@ -44,17 +45,14 @@ const Index = () => {
                 <div className="space-y-8 mb-8">
                   {/* Document Letterhead */}
                   <div className="border-b border-border pb-8">
-                    {/* Top Row: Logo and Reading Time */}
-                    <div className="flex justify-between items-center mb-6">
+                    {/* Top Row: Logo Only */}
+                    <div className="flex justify-start items-center mb-6">
                       <div className="w-16 h-16 border border-dashed border-gray-300 dark:border-gray-600 rounded-lg flex items-center justify-center">
                         <span className="text-gray-400 dark:text-gray-500 text-xs">LOGO</span>
                       </div>
-                      <div className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full">
-                        8 min read
-                      </div>
                     </div>
                     
-                    {/* Second Row: Company Info and Date */}
+                    {/* Second Row: Company Info and Reading Time */}
                     <div className="flex justify-between items-center mb-6">
                       <div className="text-left">
                         <div className="text-sm font-medium text-foreground">
@@ -64,6 +62,13 @@ const Index = () => {
                           Dover, Delaware
                         </div>
                       </div>
+                      <div className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full">
+                        4 min read
+                      </div>
+                    </div>
+                    
+                    {/* Third Row: Date */}
+                    <div className="flex justify-end items-center mb-6">
                       <div className="text-right">
                         <div className="text-sm font-medium text-foreground">
                           June 19th, 2025
