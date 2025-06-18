@@ -5,10 +5,10 @@ import { Play, BookOpen } from "lucide-react";
 const About = () => {
   return (
     <div className="pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Content - No header, no glass box */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Text */}
         <div className="text-center mb-16">
-          <p className="font-nunito text-xl sm:text-2xl lg:text-3xl leading-relaxed text-foreground mb-12">
+          <h1 className="font-nunito text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-foreground mb-12 max-w-5xl mx-auto">
             America deserves an all in one financial platform. That's{" "}
             <span className="font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text">
               O$
@@ -18,7 +18,7 @@ const About = () => {
               Macfarlane
             </span>
             {" "}for everyone.
-          </p>
+          </h1>
         </div>
 
         {/* Action Buttons */}

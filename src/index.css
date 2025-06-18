@@ -105,4 +105,8 @@
   .america-glass {
     @apply backdrop-blur-xl bg-gradient-to-br from-o-navy/20 via-transparent to-o-red/20 border border-white/30 dark:border-black/30 rounded-3xl;
   }
+
+  .search-container-gradient {
+    @apply relative rounded-full p-[2px] bg-america-gradient shadow-lg shadow-o-red/20 dark:shadow-o-navy/20;
+  }
 }

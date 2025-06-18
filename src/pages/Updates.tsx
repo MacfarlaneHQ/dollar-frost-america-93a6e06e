@@ -65,22 +65,15 @@ const Updates = () => {
   return (
     <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="font-montserrat font-extrabold text-4xl sm:text-5xl lg:text-6xl uppercase tracking-wider mb-8 text-transparent bg-america-gradient bg-clip-text">
-            Updates
-          </h1>
-          <p className="font-nunito text-xl text-muted-foreground mb-8">
-            Follow the journey to August 6th, 2025
-          </p>
-        </div>
-
         {/* Progress Section */}
         <div className="america-glass p-8 rounded-3xl mb-12">
           <div className="text-center mb-6">
             <h2 className="font-montserrat font-semibold text-2xl mb-4 text-foreground">
               Countdown to Launch
             </h2>
+            <p className="font-nunito text-muted-foreground mb-6">
+              Follow the journey to August 6th, 2025
+            </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="glass-card p-4 rounded-xl">
                 <div className="text-3xl font-montserrat font-extrabold text-foreground">

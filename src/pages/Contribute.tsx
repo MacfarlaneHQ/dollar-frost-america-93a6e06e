@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Lock, Send, ExternalLink, MessageCircle } from "lucide-react";
+import { Lock, Send, ExternalLink, Search } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 
@@ -81,85 +81,75 @@ const Contribute = () => {
   return (
     <div className="pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="font-montserrat font-extrabold text-4xl sm:text-5xl lg:text-6xl uppercase tracking-wider mb-8 text-transparent bg-america-gradient bg-clip-text">
-            Contribute
-          </h1>
-          <p className="font-nunito text-xl text-foreground">
-            Help us build America's financial future
-          </p>
-        </div>
-
         {!isAuthenticated ? (
           /* Password Protection */
           <div className="max-w-md mx-auto">
-            <Card className="border border-border bg-card">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <Lock className="h-12 w-12 mx-auto mb-4 text-foreground" />
-                  <h2 className="font-montserrat font-semibold text-2xl mb-2 text-foreground">
-                    Restricted Access
-                  </h2>
-                  <p className="font-nunito text-muted-foreground">
-                    Enter password to contribute to O$
-                  </p>
-                </div>
-                
-                <form onSubmit={handlePasswordSubmit}>
-                  <Input
-                    type="password"
-                    placeholder="Enter password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="mb-4 rounded-full text-center font-montserrat tracking-wider"
-                  />
-                  <Button 
-                    type="submit"
-                    className="w-full bg-america-gradient hover:bg-america-gradient-reverse text-white font-montserrat font-semibold rounded-full"
-                  >
-                    Access
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        ) : (
-          /* ChatGPT-style Interface */
-          <div className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
-              <MessageCircle className="h-16 w-16 mx-auto mb-4 text-foreground" />
-              <h2 className="font-montserrat font-semibold text-2xl sm:text-3xl text-foreground mb-4">
-                What does a financial operating system look like to you?
+              <Lock className="h-16 w-16 mx-auto mb-4 text-foreground" />
+              <h2 className="font-montserrat font-semibold text-2xl mb-2 text-foreground">
+                Restricted Access
               </h2>
               <p className="font-nunito text-muted-foreground">
+                Enter password to contribute to O$
+              </p>
+            </div>
+            
+            <div className="search-container-gradient">
+              <div className="relative flex items-center w-full bg-white/80 dark:bg-black/50 rounded-full backdrop-blur-md">
+                <Lock className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none" />
+                <form onSubmit={handlePasswordSubmit} className="w-full">
+                  <input
+                    type="password"
+                    placeholder="Enter password..."
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="flex-grow h-14 bg-transparent border-none rounded-full pl-12 pr-16 focus:outline-none focus:ring-0 font-montserrat tracking-wider text-foreground placeholder:text-muted-foreground"
+                  />
+                  <button 
+                    type="submit"
+                    className="absolute right-2 h-10 w-10 rounded-full bg-america-gradient hover:bg-america-gradient-reverse text-white transition-all duration-200"
+                  >
+                    <Send className="h-5 w-5 mx-auto" />
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        ) : (
+          /* Modern Chat Interface */
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-montserrat font-semibold text-3xl sm:text-4xl text-foreground mb-6">
+                What does a financial operating system look like to you?
+              </h2>
+              <p className="font-nunito text-lg text-muted-foreground">
                 Share your vision for the future of American finance
               </p>
             </div>
             
-            <form onSubmit={handleResponseSubmit} className="relative">
-              <div className="flex items-end space-x-4 p-4 border border-border rounded-2xl bg-card shadow-lg">
-                <div className="flex-1">
-                  <textarea
+            <div className="search-container-gradient">
+              <div className="relative flex items-center w-full bg-white/80 dark:bg-black/50 rounded-full backdrop-blur-md">
+                <Search className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none" />
+                <form onSubmit={handleResponseSubmit} className="w-full">
+                  <input
+                    type="text"
                     placeholder="Type your vision here..."
                     value={response}
                     onChange={(e) => setResponse(e.target.value)}
-                    className="w-full resize-none border-0 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none font-nunito text-base leading-relaxed"
-                    rows={4}
+                    className="flex-grow h-14 bg-transparent border-none rounded-full pl-12 pr-16 focus:outline-none focus:ring-0 font-nunito text-foreground placeholder:text-muted-foreground"
                     required
                   />
-                </div>
-                <Button 
-                  type="submit"
-                  size="sm"
-                  className="bg-america-gradient hover:bg-america-gradient-reverse text-white rounded-full px-6 py-2 font-montserrat font-semibold transition-all duration-200"
-                >
-                  <Send className="h-4 w-4" />
-                </Button>
+                  <button 
+                    type="submit"
+                    className="absolute right-2 h-10 w-10 rounded-full bg-america-gradient hover:bg-america-gradient-reverse text-white transition-all duration-200"
+                  >
+                    <Send className="h-5 w-5 mx-auto" />
+                  </button>
+                </form>
               </div>
-            </form>
+            </div>
             
-            <p className="text-center text-sm text-muted-foreground mt-4">
+            <p className="text-center text-sm text-muted-foreground mt-6">
               Your input helps shape the future of O$
             </p>
           </div>
