@@ -35,10 +35,10 @@ export function Navigation() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`font-montserrat font-semibold text-sm uppercase tracking-wide transition-all duration-200 hover:text-o-navy dark:hover:text-o-red ${
+                className={`font-montserrat font-semibold text-sm uppercase tracking-wide transition-all duration-200 hover:scale-105 ${
                   isActive(item.path)
-                    ? "text-o-navy dark:text-o-red border-b-2 border-o-navy dark:border-o-red pb-1"
-                    : "text-foreground hover:scale-105"
+                    ? "nav-active-pill text-foreground"
+                    : "text-foreground hover:text-foreground"
                 }`}
               >
                 {item.label}
@@ -88,8 +88,8 @@ export function Navigation() {
                   to={item.path}
                   className={`block px-3 py-2 rounded-xl text-base font-montserrat font-semibold uppercase tracking-wide transition-colors ${
                     isActive(item.path)
-                      ? "text-o-navy dark:text-o-red bg-o-light dark:bg-o-neutral"
-                      : "text-foreground hover:bg-o-light/50 dark:hover:bg-o-neutral/50"
+                      ? "text-foreground bg-gray-100 dark:bg-gray-800"
+                      : "text-foreground hover:bg-gray-50 dark:hover:bg-gray-800/50"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >

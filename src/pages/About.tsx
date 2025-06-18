@@ -8,14 +8,14 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Text */}
         <div className="text-center mb-16">
-          <h1 className="font-nunito text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-foreground mb-12 max-w-5xl mx-auto">
+          <h1 className="font-montserrat text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-foreground mb-12 max-w-5xl mx-auto">
             America deserves an all in one financial platform. That's{" "}
             <span className="font-montserrat font-extrabold text-transparent bg-america-gradient bg-clip-text">
               O$
             </span>
             . Built and powered by{" "}
-            <span className="font-montserrat font-semibold text-foreground">
-              Macfarlane
+            <span className="font-montserrat font-extrabold uppercase text-foreground">
+              MACFARLANE
             </span>
             {" "}for everyone.
           </h1>

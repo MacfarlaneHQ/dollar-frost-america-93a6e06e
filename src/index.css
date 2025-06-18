@@ -107,6 +107,10 @@
   }
 
   .search-container-gradient {
-    @apply relative rounded-full p-[2px] bg-america-gradient shadow-lg shadow-o-red/20 dark:shadow-o-navy/20;
+    @apply relative rounded-full p-[2px] bg-gradient-to-br from-gray-200 via-white to-gray-300 dark:from-o-navy/60 dark:via-o-red/40 dark:to-o-navy/60 shadow-lg shadow-gray-200/50 dark:shadow-o-red/20;
+  }
+
+  .nav-active-pill {
+    @apply bg-gray-100 dark:bg-gray-800 rounded-full px-4 py-2;
   }
 }

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Lock, Send, ExternalLink, Search } from "lucide-react";
+import { Lock, Send, ExternalLink, HelpCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 
@@ -62,7 +62,7 @@ const Contribute = () => {
             <Link to="/about">
               <Button variant="outline" className="font-montserrat font-semibold rounded-full">
                 <ExternalLink className="mr-2 h-4 w-4" />
-                About Macfarlane
+                About MACFARLANE
               </Button>
             </Link>
           </div>
@@ -95,7 +95,7 @@ const Contribute = () => {
             </div>
             
             <div className="search-container-gradient">
-              <div className="relative flex items-center w-full bg-white/80 dark:bg-black/50 rounded-full backdrop-blur-md">
+              <div className="relative flex items-center w-full bg-white/90 dark:bg-black/50 rounded-full backdrop-blur-md">
                 <Lock className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none" />
                 <form onSubmit={handlePasswordSubmit} className="w-full">
                   <input
@@ -107,7 +107,7 @@ const Contribute = () => {
                   />
                   <button 
                     type="submit"
-                    className="absolute right-2 h-10 w-10 rounded-full bg-america-gradient hover:bg-america-gradient-reverse text-white transition-all duration-200"
+                    className="absolute right-2 h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-foreground transition-all duration-200"
                   >
                     <Send className="h-5 w-5 mx-auto" />
                   </button>
@@ -128,8 +128,8 @@ const Contribute = () => {
             </div>
             
             <div className="search-container-gradient">
-              <div className="relative flex items-center w-full bg-white/80 dark:bg-black/50 rounded-full backdrop-blur-md">
-                <Search className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none" />
+              <div className="relative flex items-center w-full bg-white/90 dark:bg-black/50 rounded-full backdrop-blur-md">
+                <HelpCircle className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none" />
                 <form onSubmit={handleResponseSubmit} className="w-full">
                   <input
                     type="text"
@@ -141,7 +141,7 @@ const Contribute = () => {
                   />
                   <button 
                     type="submit"
-                    className="absolute right-2 h-10 w-10 rounded-full bg-america-gradient hover:bg-america-gradient-reverse text-white transition-all duration-200"
+                    className="absolute right-2 h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-foreground transition-all duration-200"
                   >
                     <Send className="h-5 w-5 mx-auto" />
                   </button>
