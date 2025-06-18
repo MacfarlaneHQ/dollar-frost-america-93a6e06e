@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog";
@@ -52,27 +51,23 @@ const Index = () => {
                       </div>
                     </div>
                     
-                    {/* Second Row: Company Info and Reading Time */}
-                    <div className="flex justify-between items-center mb-6">
-                      <div className="text-left">
-                        <div className="text-sm font-medium text-foreground">
-                          Macfarlane HQ
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          Dover, Delaware
-                        </div>
+                    {/* Second Row: Company Name and Reading Time */}
+                    <div className="flex justify-between items-baseline mb-3">
+                      <div className="text-sm font-medium text-foreground">
+                        Macfarlane HQ
                       </div>
                       <div className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full">
                         4 min read
                       </div>
                     </div>
                     
-                    {/* Third Row: Date */}
-                    <div className="flex justify-end items-center mb-6">
-                      <div className="text-right">
-                        <div className="text-sm font-medium text-foreground">
-                          June 19th, 2025
-                        </div>
+                    {/* Third Row: Location and Date */}
+                    <div className="flex justify-between items-baseline mb-6">
+                      <div className="text-sm text-muted-foreground">
+                        Dover, Delaware
+                      </div>
+                      <div className="text-sm font-medium text-foreground">
+                        June 19th, 2025
                       </div>
                     </div>
                     
