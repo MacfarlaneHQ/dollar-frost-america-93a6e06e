@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog";
 import { Play, FileText, User } from "lucide-react";
 
 const Index = () => {
@@ -40,38 +40,50 @@ const Index = () => {
                 Release
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+            <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700">
               <DialogHeader>
-                <div className="space-y-6 mb-8">
-                  {/* Letterhead Header */}
-                  <div className="text-center border-b border-border pb-6">
-                    <div className="flex justify-center mb-4">
+                <div className="space-y-8 mb-8">
+                  {/* Document Letterhead */}
+                  <div className="border-b-2 border-gray-300 dark:border-gray-600 pb-8">
+                    {/* Top Row: Logo and Reading Time */}
+                    <div className="flex justify-between items-start mb-6">
                       <div className="w-16 h-16 border border-dashed border-gray-300 dark:border-gray-600 rounded-lg flex items-center justify-center">
                         <span className="text-gray-400 dark:text-gray-500 text-xs">LOGO</span>
                       </div>
+                      <div className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full">
+                        8 min read
+                      </div>
                     </div>
-                    <div className="text-sm text-muted-foreground mb-2">
-                      Macfarlane HQ
+                    
+                    {/* Second Row: Company Info and Date */}
+                    <div className="flex justify-between items-start mb-6">
+                      <div className="text-left">
+                        <div className="text-sm font-medium text-foreground">
+                          Macfarlane HQ
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          Dover, Delaware
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-sm font-medium text-foreground">
+                          June 19th, 2025
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-sm text-muted-foreground mb-4">
-                      Dover, Delaware
-                    </div>
-                    <h2 className="font-montserrat font-extrabold text-lg tracking-wider mb-2">
-                      FOR IMMEDIATE RELEASE
-                    </h2>
-                    <div className="text-sm text-muted-foreground mb-2">
-                      June 19th, 2025
-                    </div>
-                    <div className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-full inline-block">
-                      8 min read
+                    
+                    {/* Centered Release Header */}
+                    <div className="text-center">
+                      <h1 className="font-montserrat font-extrabold text-xl tracking-wider text-foreground">
+                        FOR IMMEDIATE RELEASE
+                      </h1>
                     </div>
                   </div>
-                  <DialogTitle className="font-montserrat font-bold text-xl text-center">
-                    Press Release
-                  </DialogTitle>
                 </div>
               </DialogHeader>
-              <div className="font-nunito text-foreground space-y-4 leading-relaxed">
+              
+              {/* Document Content */}
+              <div className="font-nunito text-foreground space-y-4 leading-relaxed px-2">
                 <p className="font-semibold">To our clients,</p>
                 
                 <p>What makes a good business? Is it frontier technology, human capital, or entrepreneurial insight? It's certainly not our cutting-edge investment strategies, youngest founding team in the nation, or most progressive billing structure. Our most important asset is our clients. It's literally you.</p>
@@ -102,9 +114,9 @@ const Index = () => {
                 
                 <p>We can't wait to show you America's operating system for financial success, powered by Macfarlane.</p>
                 
-                <div className="mt-6 pt-4 border-t border-border">
-                  <p>God bless us all,</p>
-                  <div className="flex items-center gap-3 mt-2">
+                <div className="mt-8 pt-6 border-t border-border">
+                  <p className="mb-4">God bless us all,</p>
+                  <div className="flex items-center gap-3">
                     <User className="h-8 w-8 p-1 border border-border rounded-full" />
                     <div>
                       <p className="font-semibold">Jarah D. Macfarlane</p>
