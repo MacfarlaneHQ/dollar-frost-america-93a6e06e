@@ -42,14 +42,31 @@ const Index = () => {
             </DialogTrigger>
             <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
               <DialogHeader>
-                <div className="text-center space-y-2 mb-6">
-                  <div className="text-sm text-muted-foreground">
-                    Sent from Macfarlane HQ
+                <div className="space-y-6 mb-8">
+                  {/* Letterhead Header */}
+                  <div className="text-center border-b border-border pb-6">
+                    <div className="flex justify-center mb-4">
+                      <div className="w-16 h-16 border border-dashed border-gray-300 dark:border-gray-600 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-400 dark:text-gray-500 text-xs">LOGO</span>
+                      </div>
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-2">
+                      Macfarlane HQ
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-4">
+                      Dover, Delaware
+                    </div>
+                    <h2 className="font-montserrat font-extrabold text-lg tracking-wider mb-2">
+                      FOR IMMEDIATE RELEASE
+                    </h2>
+                    <div className="text-sm text-muted-foreground mb-2">
+                      June 19th, 2025
+                    </div>
+                    <div className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-full inline-block">
+                      8 min read
+                    </div>
                   </div>
-                  <div className="text-sm text-muted-foreground">
-                    Dover, Delaware | June 19th, 2025
-                  </div>
-                  <DialogTitle className="font-montserrat font-bold text-xl mt-4">
+                  <DialogTitle className="font-montserrat font-bold text-xl text-center">
                     Press Release
                   </DialogTitle>
                 </div>
@@ -92,7 +109,6 @@ const Index = () => {
                     <div>
                       <p className="font-semibold">Jarah D. Macfarlane</p>
                       <p className="text-sm text-muted-foreground">Macfarlane Company Founder and CEO</p>
-                      <p className="text-sm text-muted-foreground italic">Sent from MacfarlaneHQ</p>
                     </div>
                   </div>
                 </div>
