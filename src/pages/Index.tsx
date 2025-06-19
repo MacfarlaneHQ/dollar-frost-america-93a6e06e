@@ -16,7 +16,7 @@ const Index = () => {
             <img 
               src="/OSlogo.png" 
               alt="O$ Logo" 
-              className="w-full h-full object-contain animate-pulse opacity-90" 
+              className="w-full h-full object-contain animate-[pulse_2s_ease-in-out_infinite] [animation-timing-function:cubic-bezier(0.4,0,0.6,1)]" 
             />
           </div>
         </div>
