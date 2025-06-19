@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog";
-import { Play, FileText, User } from "lucide-react";
+import { Play, FileText, User, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [isLetterOpen, setIsLetterOpen] = useState(false);
@@ -105,7 +106,7 @@ const Index = () => {
                 
                 <p>Until now.</p>
                 
-                <p>Code is just language, and language can be learned. Over the weekend, we made some apps using Lovable.dev. We submitted one of these projects, along with a manifesto about creating a one-login solution for our clients, to season one of their software incubator program. We did it at the last minute with no expectations—and we got in.</p>
+                <p>Code is just language, and language can be learned. Over the weekend, we made some apps using <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Lovable.dev</a>. We submitted one of these projects, along with a manifesto about creating a one-login solution for our clients, to season one of their software incubator program. We did it at the last minute with no expectations—and we got in.</p>
                 
                 <p>The program runs for six weeks, after which we'll present our project in San Francisco to the tech world. It's a once-in-a-lifetime opportunity we thank the good Lord for. It also means that until August 6th, things will be different.</p>
                 
@@ -117,14 +118,20 @@ const Index = () => {
                 
                 <p>All of this can be built, and it's what we will bring to you—our clients, our most important asset. We need full control so we can do an even better job. It's your job to trust us; it's our job to be the best.</p>
                 
-                <p>If you visit os.financial, you'll be able to keep up with the project in real-time. Maryam and I ask that each of you tells us what a financial success platform looks like to you. Just go to the website, click "contribute," and enter the password MACFARLANE.</p>
+                <p>If you visit <a href="https://os.financial" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">os.financial</a>, you'll be able to keep up with the project in real-time. Maryam and I ask that each of you tells us what a financial success platform looks like to you. Just go to the <Link to="/updates" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold cursor-pointer" onClick={() => setIsLetterOpen(false)}>website</Link>, click "<Link to="/contribute" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold cursor-pointer" onClick={() => setIsLetterOpen(false)}>contribute</Link>," and enter the password MACFARLANE.</p>
                 
                 <p>We can't wait to show you America's operating system for financial success, powered by Macfarlane.</p>
                 
                 <div className="mt-8 pt-6 border-t border-border">
                   <p className="mb-4">God bless us all,</p>
                   <div className="flex items-center gap-3">
-                    <User className="h-8 w-8 p-1 border border-border rounded-full" />
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-border">
+                      <img 
+                        src="/ProfessionalHS.jpeg" 
+                        alt="Jarah D. Macfarlane" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <div>
                       <p className="font-semibold">Jarah D. Macfarlane</p>
                       <p className="text-sm text-muted-foreground">Macfarlane Company Founder and CEO</p>
