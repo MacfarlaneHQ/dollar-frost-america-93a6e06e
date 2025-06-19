@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,12 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Lock, Send, ExternalLink, HelpCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contribute = () => {
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [response, setResponse] = useState("");
   const [showThankYou, setShowThankYou] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
@@ -31,12 +32,41 @@ const Contribute = () => {
     }
   };
 
-  const handleResponseSubmit = (e: React.FormEvent) => {
+  const handleResponseSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (response.trim()) {
-      setShowThankYou(true);
-      setResponse("");
-      console.log("User response:", response);
+    if (!response.trim()) return;
+
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase
+        .from('contributions')
+        .insert([{ response: response.trim() }]);
+
+      if (error) {
+        console.error('Error saving contribution:', error);
+        toast({
+          title: "Error",
+          description: "Failed to save your contribution. Please try again.",
+          variant: "destructive",
+        });
+      } else {
+        setShowThankYou(true);
+        setResponse("");
+        toast({
+          title: "Thank you!",
+          description: "Your vision has been saved successfully.",
+        });
+      }
+    } catch (error) {
+      console.error('Error saving contribution:', error);
+      toast({
+        title: "Error",
+        description: "Failed to save your contribution. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -132,10 +162,12 @@ const Contribute = () => {
                     onChange={(e) => setResponse(e.target.value)}
                     className="flex-grow h-14 bg-transparent border-none rounded-full pl-12 pr-14 focus:outline-none focus:ring-0 font-nunito text-foreground placeholder:text-muted-foreground"
                     required
+                    disabled={isSubmitting}
                   />
                   <button 
                     type="submit"
-                    className="absolute right-2 h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-foreground transition-all duration-200 flex items-center justify-center"
+                    disabled={isSubmitting}
+                    className="absolute right-2 h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-foreground transition-all duration-200 flex items-center justify-center disabled:opacity-50"
                   >
                     <Send className="h-4 w-4" />
                   </button>

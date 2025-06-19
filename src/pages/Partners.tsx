@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Lock, Send, ExternalLink, Code, User, Mail, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const Partners = () => {
   const [password, setPassword] = useState("");
@@ -17,6 +17,7 @@ const Partners = () => {
     expertise: ""
   });
   const [showThankYou, setShowThankYou] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
@@ -43,12 +44,53 @@ const Partners = () => {
     }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name.trim() && formData.email.trim() && formData.expertise.trim()) {
-      setShowThankYou(true);
-      console.log("Partner submission:", formData);
-      setFormData({ name: "", email: "", phone: "", expertise: "" });
+    if (!formData.name.trim() || !formData.email.trim() || !formData.expertise.trim()) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('partner_submissions')
+        .insert([{
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() || null,
+          expertise: formData.expertise.trim()
+        }]);
+
+      if (error) {
+        console.error('Error saving partner submission:', error);
+        toast({
+          title: "Error",
+          description: "Failed to submit your partnership application. Please try again.",
+          variant: "destructive",
+        });
+      } else {
+        setShowThankYou(true);
+        setFormData({ name: "", email: "", phone: "", expertise: "" });
+        toast({
+          title: "Thank you!",
+          description: "Your partnership application has been submitted successfully.",
+        });
+      }
+    } catch (error) {
+      console.error('Error saving partner submission:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit your partnership application. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -153,6 +195,7 @@ const Partners = () => {
                       onChange={(e) => handleInputChange("name", e.target.value)}
                       className="pl-10 rounded-full font-nunito"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -171,6 +214,7 @@ const Partners = () => {
                       onChange={(e) => handleInputChange("email", e.target.value)}
                       className="pl-10 rounded-full font-nunito"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -189,6 +233,7 @@ const Partners = () => {
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
                     className="pl-10 rounded-full font-nunito"
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -209,6 +254,7 @@ const Partners = () => {
                       onChange={(e) => handleInputChange("expertise", e.target.value)}
                       className="flex-grow h-14 bg-transparent border-none rounded-full pl-12 pr-4 focus:outline-none focus:ring-0 font-nunito text-foreground placeholder:text-muted-foreground"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -218,10 +264,11 @@ const Partners = () => {
               <div className="flex justify-center pt-4">
                 <Button 
                   type="submit"
-                  className="bg-america-gradient hover:bg-america-gradient-reverse text-white font-montserrat font-semibold rounded-full px-8 py-3"
+                  disabled={isSubmitting}
+                  className="bg-america-gradient hover:bg-america-gradient-reverse text-white font-montserrat font-semibold rounded-full px-8 py-3 disabled:opacity-50"
                 >
                   <Send className="mr-2 h-4 w-4" />
-                  Submit Partnership
+                  {isSubmitting ? "Submitting..." : "Submit Partnership"}
                 </Button>
               </div>
             </form>
