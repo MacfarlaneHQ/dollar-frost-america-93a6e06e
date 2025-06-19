@@ -13,7 +13,11 @@ const Index = () => {
         {/* Logo Box Space */}
         <div className="flex justify-center mb-12">
           <div className="w-32 h-32 rounded-2xl flex items-center justify-center">
-            <img src="/OSlogo.png" alt="O$ Logo" className="w-full h-full object-contain" />
+            <img 
+              src="/OSlogo.png" 
+              alt="O$ Logo" 
+              className="w-full h-full object-contain animate-pulse opacity-90" 
+            />
           </div>
         </div>
 
