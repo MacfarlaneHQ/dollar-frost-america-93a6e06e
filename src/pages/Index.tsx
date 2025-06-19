@@ -12,8 +12,8 @@ const Index = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo Box Space */}
         <div className="flex justify-center mb-12">
-          <div className="w-32 h-32 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-2xl flex items-center justify-center">
-            <span className="text-gray-400 dark:text-gray-500 font-montserrat text-sm">LOGO</span>
+          <div className="w-32 h-32 rounded-2xl flex items-center justify-center">
+            <img src="/OSlogo.png" alt="O$ Logo" className="w-full h-full object-contain" />
           </div>
         </div>
 
@@ -47,11 +47,11 @@ const Index = () => {
                   <div className="border-b border-border pb-8">
                     {/* Top Row: Logo and QR Code */}
                     <div className="flex justify-between items-center mb-6">
-                      <div className="w-16 h-16 border border-dashed border-gray-300 dark:border-gray-600 rounded-lg flex items-center justify-center">
-                        <span className="text-gray-400 dark:text-gray-500 text-xs">LOGO</span>
+                      <div className="w-16 h-16 rounded-lg flex items-center justify-center">
+                        <img src="/macfarlane.png" alt="Macfarlane Logo" className="w-full h-full object-contain" />
                       </div>
-                      <div className="w-16 h-16 border border-dashed border-gray-300 dark:border-gray-600 rounded-lg flex items-center justify-center">
-                        <span className="text-gray-400 dark:text-gray-500 text-xs">QR</span>
+                      <div className="w-16 h-16 rounded-lg flex items-center justify-center">
+                        <img src="/frame.png" alt="QR Code" className="w-full h-full object-contain" />
                       </div>
                     </div>
                     

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Instagram, Linkedin, X, Copy, Check } from "lucide-react";
+import { Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -74,15 +74,30 @@ export function Footer() {
           {/* Social Links */}
           <div className="flex items-center space-x-4">
             <div className="flex space-x-3">
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-o-light dark:hover:bg-o-neutral">
-                <Instagram className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-o-light dark:hover:bg-o-neutral">
-                <X className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-o-light dark:hover:bg-o-neutral">
-                <Linkedin className="h-5 w-5" />
-              </Button>
+              <a
+                href="https://instagram.com/macfarlanecompany"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-full font-montserrat font-semibold text-sm hover:bg-o-light dark:hover:bg-o-neutral transition-colors duration-200"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://x.com/macfarlane_hq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-full font-montserrat font-semibold text-sm hover:bg-o-light dark:hover:bg-o-neutral transition-colors duration-200"
+              >
+                X
+              </a>
+              <a
+                href="https://linkedin.com/company/macfarlanehq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-full font-montserrat font-semibold text-sm hover:bg-o-light dark:hover:bg-o-neutral transition-colors duration-200"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
