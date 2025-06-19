@@ -1,14 +1,21 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Lock, Send, ExternalLink, Code } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Lock, Send, ExternalLink, Code, User, Mail, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 
 const Partners = () => {
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [response, setResponse] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    expertise: ""
+  });
   const [showThankYou, setShowThankYou] = useState(false);
   const { toast } = useToast();
 
@@ -29,12 +36,19 @@ const Partners = () => {
     }
   };
 
-  const handleResponseSubmit = (e: React.FormEvent) => {
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (response.trim()) {
+    if (formData.name.trim() && formData.email.trim() && formData.expertise.trim()) {
       setShowThankYou(true);
-      setResponse("");
-      console.log("Partner response:", response);
+      console.log("Partner submission:", formData);
+      setFormData({ name: "", email: "", phone: "", expertise: "" });
     }
   };
 
@@ -111,38 +125,109 @@ const Partners = () => {
             </div>
           </div>
         ) : (
-          /* Modern Chat Interface */
-          <div className="max-w-3xl mx-auto">
+          /* Partner Contact Form */
+          <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-montserrat font-semibold text-2xl sm:text-3xl md:text-4xl text-foreground mb-6 leading-tight">
-                How can you help build the future of O$?
+                Partner with us to build O$
               </h2>
+              <p className="font-nunito text-lg text-muted-foreground">
+                Tell us how you can help and how we can reach you
+              </p>
             </div>
             
-            <div className="search-container-gradient">
-              <div className="relative flex items-center w-full bg-white/90 dark:bg-black/50 rounded-full backdrop-blur-md">
-                <Code className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none" />
-                <form onSubmit={handleResponseSubmit} className="w-full flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Tell us how you can help and why we need it"
-                    value={response}
-                    onChange={(e) => setResponse(e.target.value)}
-                    className="flex-grow h-14 bg-transparent border-none rounded-full pl-12 pr-14 focus:outline-none focus:ring-0 font-nunito text-foreground placeholder:text-muted-foreground"
-                    required
-                  />
-                  <button 
-                    type="submit"
-                    className="absolute right-2 h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-foreground transition-all duration-200 flex items-center justify-center"
-                  >
-                    <Send className="h-4 w-4" />
-                  </button>
-                </form>
+            <form onSubmit={handleFormSubmit} className="space-y-6">
+              {/* Contact Information */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="font-montserrat font-semibold">
+                    Name *
+                  </Label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      id="name"
+                      type="text"
+                      placeholder="Your full name"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange("name", e.target.value)}
+                      className="pl-10 rounded-full font-nunito"
+                      required
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="font-montserrat font-semibold">
+                    Email *
+                  </Label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="your@email.com"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange("email", e.target.value)}
+                      className="pl-10 rounded-full font-nunito"
+                      required
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="font-montserrat font-semibold">
+                  Phone <span className="text-muted-foreground">(optional)</span>
+                </Label>
+                <div className="relative">
+                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder="Your phone number"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange("phone", e.target.value)}
+                    className="pl-10 rounded-full font-nunito"
+                  />
+                </div>
+              </div>
+              
+              {/* Expertise Section */}
+              <div className="space-y-2">
+                <Label htmlFor="expertise" className="font-montserrat font-semibold">
+                  How can you help build O$? *
+                </Label>
+                <div className="search-container-gradient">
+                  <div className="relative flex items-center w-full bg-white/90 dark:bg-black/50 rounded-full backdrop-blur-md">
+                    <Code className="absolute left-4 h-5 w-5 text-muted-foreground pointer-events-none" />
+                    <input
+                      id="expertise"
+                      type="text"
+                      placeholder="Tell us your expertise and why we need it"
+                      value={formData.expertise}
+                      onChange={(e) => handleInputChange("expertise", e.target.value)}
+                      className="flex-grow h-14 bg-transparent border-none rounded-full pl-12 pr-4 focus:outline-none focus:ring-0 font-nunito text-foreground placeholder:text-muted-foreground"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              {/* Submit Button */}
+              <div className="flex justify-center pt-4">
+                <Button 
+                  type="submit"
+                  className="bg-america-gradient hover:bg-america-gradient-reverse text-white font-montserrat font-semibold rounded-full px-8 py-3"
+                >
+                  <Send className="mr-2 h-4 w-4" />
+                  Submit Partnership
+                </Button>
+              </div>
+            </form>
             
             <p className="text-center text-sm text-muted-foreground mt-6">
-              Your expertise helps build O$
+              Your contact information helps us connect and collaborate
             </p>
           </div>
         )}
