@@ -12,8 +12,9 @@ const Updates = () => {
   });
 
   const targetDate = new Date("2025-08-06T00:00:00");
-  const startDate = new Date("2025-08-06T00:00:00"); // Changed to August 6th
+  const startDate = new Date("2025-08-06T00:00:00");
   const currentDate = new Date();
+  const programHasStarted = currentDate >= startDate;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -33,19 +34,27 @@ const Updates = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Calculate progress - since start date is now today (Aug 6th), progress starts at 0
-  const totalDuration = targetDate.getTime() - startDate.getTime();
-  const elapsed = currentDate.getTime() - startDate.getTime();
-  const progress = Math.max(0, Math.min(100, (elapsed / totalDuration) * 100));
+  // Calculate progress and day counter
+  const getCurrentDay = () => {
+    if (!programHasStarted) return 0;
+    return Math.floor((currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+  };
+
+  const getProgress = () => {
+    if (!programHasStarted) return 0;
+    // Assuming 6-week program (42 days)
+    const totalDays = 42;
+    const currentDay = getCurrentDay();
+    return Math.min(100, (currentDay / totalDays) * 100);
+  };
 
   // Generate days starting from August 6th
   const generateDays = () => {
     const days = [];
     const current = new Date(startDate);
     
-    // Generate days for the project duration (you can adjust this number)
-    for (let i = 0; i < 48; i++) { // 48 days for the 6-week program plus some buffer
-      const isAvailable = current <= currentDate;
+    for (let i = 0; i < 48; i++) {
+      const isAvailable = current <= currentDate && programHasStarted;
       days.push({
         date: new Date(current),
         isAvailable,
@@ -62,6 +71,7 @@ const Updates = () => {
   };
 
   const days = generateDays();
+  const currentDay = getCurrentDay();
 
   return (
     <div className="pt-24 pb-16">
@@ -73,14 +83,18 @@ const Updates = () => {
               Building O$ - Day by Day
             </h2>
             <p className="font-nunito text-muted-foreground mb-6">
-              Following our journey from August 6th, 2025
+              {programHasStarted 
+                ? `Following our journey from August 6th, 2025` 
+                : `Program begins August 6th, 2025`}
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="glass-card p-4 rounded-xl">
                 <div className="text-3xl font-montserrat font-extrabold text-foreground">
-                  {Math.floor((currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)) + 1}
+                  {programHasStarted ? currentDay : timeLeft.days}
                 </div>
-                <div className="text-sm font-nunito text-muted-foreground">Day</div>
+                <div className="text-sm font-nunito text-muted-foreground">
+                  {programHasStarted ? "Day" : "Days Until Start"}
+                </div>
               </div>
               <div className="glass-card p-4 rounded-xl">
                 <div className="text-3xl font-montserrat font-extrabold text-foreground">
@@ -101,9 +115,11 @@ const Updates = () => {
                 <div className="text-sm font-nunito text-muted-foreground">Seconds</div>
               </div>
             </div>
-            <Progress value={progress} className="h-3 rounded-full" />
+            <Progress value={getProgress()} className="h-3 rounded-full" />
             <p className="text-sm font-nunito text-muted-foreground mt-2">
-              Day {Math.floor((currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)) + 1} of the Journey
+              {programHasStarted 
+                ? `Day ${currentDay} of the Journey`
+                : `Program starts in ${timeLeft.days} days`}
             </p>
           </div>
         </div>
