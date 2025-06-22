@@ -11,8 +11,8 @@ const Updates = () => {
     seconds: 0
   });
 
-  const targetDate = new Date("2025-08-06T00:00:00");
-  const startDate = new Date("2025-08-06T00:00:00");
+  const targetDate = new Date("2025-08-06T00:00:00"); // Milestone date
+  const startDate = new Date("2025-06-22T00:00:00"); // Program start date (today)
   const currentDate = new Date();
   const programHasStarted = currentDate >= startDate;
 
@@ -42,13 +42,13 @@ const Updates = () => {
 
   const getProgress = () => {
     if (!programHasStarted) return 0;
-    // Assuming 6-week program (42 days)
-    const totalDays = 42;
+    // Calculate days until August 6th milestone
+    const totalDays = Math.floor((targetDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
     const currentDay = getCurrentDay();
     return Math.min(100, (currentDay / totalDays) * 100);
   };
 
-  // Generate days starting from August 6th
+  // Generate days starting from June 22nd
   const generateDays = () => {
     const days = [];
     const current = new Date(startDate);
@@ -83,18 +83,22 @@ const Updates = () => {
               Building O$ - Day by Day
             </h2>
             <p className="font-nunito text-muted-foreground mb-6">
-              {programHasStarted 
-                ? `Following our journey from August 6th, 2025` 
-                : `Program begins August 6th, 2025`}
+              Following our journey to August 6th, 2025
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="glass-card p-4 rounded-xl">
                 <div className="text-3xl font-montserrat font-extrabold text-foreground">
-                  {programHasStarted ? currentDay : timeLeft.days}
+                  {programHasStarted ? currentDay : 0}
                 </div>
                 <div className="text-sm font-nunito text-muted-foreground">
-                  {programHasStarted ? "Day" : "Days Until Start"}
+                  Day
                 </div>
+              </div>
+              <div className="glass-card p-4 rounded-xl">
+                <div className="text-3xl font-montserrat font-extrabold text-foreground">
+                  {timeLeft.days}
+                </div>
+                <div className="text-sm font-nunito text-muted-foreground">Days to Milestone</div>
               </div>
               <div className="glass-card p-4 rounded-xl">
                 <div className="text-3xl font-montserrat font-extrabold text-foreground">
@@ -108,18 +112,12 @@ const Updates = () => {
                 </div>
                 <div className="text-sm font-nunito text-muted-foreground">Minutes</div>
               </div>
-              <div className="glass-card p-4 rounded-xl">
-                <div className="text-3xl font-montserrat font-extrabold text-foreground">
-                  {timeLeft.seconds}
-                </div>
-                <div className="text-sm font-nunito text-muted-foreground">Seconds</div>
-              </div>
             </div>
             <Progress value={getProgress()} className="h-3 rounded-full" />
             <p className="text-sm font-nunito text-muted-foreground mt-2">
               {programHasStarted 
-                ? `Day ${currentDay} of the Journey`
-                : `Program starts in ${timeLeft.days} days`}
+                ? `Day ${currentDay} - ${timeLeft.days} days until August 6th milestone`
+                : `Program starts today`}
             </p>
           </div>
         </div>
