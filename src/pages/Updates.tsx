@@ -12,7 +12,7 @@ const Updates = () => {
   });
 
   const targetDate = new Date("2025-08-06T00:00:00");
-  const startDate = new Date("2025-06-19T00:00:00");
+  const startDate = new Date("2025-08-06T00:00:00"); // Changed to August 6th
   const currentDate = new Date();
 
   useEffect(() => {
@@ -33,17 +33,18 @@ const Updates = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Calculate progress
+  // Calculate progress - since start date is now today (Aug 6th), progress starts at 0
   const totalDuration = targetDate.getTime() - startDate.getTime();
   const elapsed = currentDate.getTime() - startDate.getTime();
   const progress = Math.max(0, Math.min(100, (elapsed / totalDuration) * 100));
 
-  // Generate days between start and end date
+  // Generate days starting from August 6th
   const generateDays = () => {
     const days = [];
     const current = new Date(startDate);
     
-    while (current <= targetDate) {
+    // Generate days for the project duration (you can adjust this number)
+    for (let i = 0; i < 48; i++) { // 48 days for the 6-week program plus some buffer
       const isAvailable = current <= currentDate;
       days.push({
         date: new Date(current),
@@ -69,17 +70,17 @@ const Updates = () => {
         <div className="america-glass p-8 rounded-3xl mb-12">
           <div className="text-center mb-6">
             <h2 className="font-montserrat font-semibold text-2xl mb-4 text-foreground">
-              Countdown to Launch
+              Building O$ - Day by Day
             </h2>
             <p className="font-nunito text-muted-foreground mb-6">
-              Follow the journey to August 6th, 2025
+              Following our journey from August 6th, 2025
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="glass-card p-4 rounded-xl">
                 <div className="text-3xl font-montserrat font-extrabold text-foreground">
-                  {timeLeft.days}
+                  {Math.floor((currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)) + 1}
                 </div>
-                <div className="text-sm font-nunito text-muted-foreground">Days</div>
+                <div className="text-sm font-nunito text-muted-foreground">Day</div>
               </div>
               <div className="glass-card p-4 rounded-xl">
                 <div className="text-3xl font-montserrat font-extrabold text-foreground">
@@ -102,7 +103,7 @@ const Updates = () => {
             </div>
             <Progress value={progress} className="h-3 rounded-full" />
             <p className="text-sm font-nunito text-muted-foreground mt-2">
-              {progress.toFixed(1)}% Complete
+              Day {Math.floor((currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)) + 1} of the Journey
             </p>
           </div>
         </div>
@@ -128,7 +129,7 @@ const Updates = () => {
                     <div className="w-20 h-20 america-glass rounded-xl flex items-center justify-center">
                       <div className="text-center">
                         <div className="text-xs font-nunito text-muted-foreground uppercase">
-                          {day.dayOfWeek.slice(0, 3)}
+                          Day {index + 1}
                         </div>
                         <div className="text-xl font-montserrat font-bold text-foreground">
                           {day.date.getDate()}
@@ -153,12 +154,12 @@ const Updates = () => {
                       <div className="space-y-2">
                         <p className="font-nunito text-muted-foreground">
                           Today's update will be available here. Check back for OS improvements, 
-                          new features, and waitlist growth metrics.
+                          new features, and project progress.
                         </p>
                         <div className="flex flex-wrap gap-2 mt-3">
                           <Badge variant="outline">OS Update</Badge>
                           <Badge variant="outline">New Features</Badge>
-                          <Badge variant="outline">Waitlist Growth</Badge>
+                          <Badge variant="outline">Progress Report</Badge>
                         </div>
                       </div>
                     ) : (
